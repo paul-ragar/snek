@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+$gamer: 'VT323', monospace;
+
+body {
+  background-color: rgb(40, 40, 40);
+}
+.game-container {
+  height: 530px;
+  width: 500px;
+  margin: 50px auto;
+  .score-container {
+    width: 130px;
+    margin: 0 auto 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+      font-size: 28px;
+      color: rgb(240, 240, 240);
+      font-family: $gamer;
+    }
+  }
+  .screen {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    background-color: rgb(10, 10, 10);
+    .little-dude {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: rgb(255, 255, 255);
+    }
+    .tail {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: rgb(255, 255, 255);
+      border: .25px solid;
+      border-color: rgb(10, 10, 10);
+    }
+    .fruit-box {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: transparent;
+      .fruit {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: purple;
+      }
+    }
+    .pause-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(40, 40, 40, .7);
+      height: 50px;
+      width: 130px;
+      p {
+        font-family: $gamer;
+        font-size: 28px;
+        color: rgb(240, 240, 240);
+      }
+    }
+    .gameOver-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(40, 40, 40, .7);
+      height: 50px;
+      width: 180px;
+      p {
+        font-family: $gamer;
+        font-size: 28px;
+        color: rgb(240, 240, 240);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+    .newGame-div {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(40, 40, 40, .7);
+      height: 50px;
+      width: 250px;
+      p {
+        font-family: $gamer;
+        font-size: 28px;
+        color: rgb(240, 240, 240);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+      &:hover {
+        background-color: rgba(40, 40, 40, .9);
+      }
+    }
+  }
+}
+
+
+
+
+
+// ANIMATIONS FOR NG-SHOW AND NG-HIDE
+.pause-div.ng-hide-remove {
+  animation: .2s fadeIn;
+}
+.gameOver-div.ng-hide-remove {
+  animation: 0.8s bounceIn;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+    margin-left: -90px;
+    margin-top: -25px;
+  }
+  5% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-40px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+    margin-left: -90px;
+    margin-top: -25px;
+  }
+}

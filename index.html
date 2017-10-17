@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snake</title>
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-container">
+          <p>Score:</p><p>{{score}}</p>
+        </div>
+      
+        <div class="screen" tabindex="0" ng-keydown="moveDude($event.keyCode)">
+      
+          <div class="tail" ng-style="{left: (bit.x + 'px'), top: (bit.y + 'px')}" ng-repeat="bit in tail">
+          </div>
+      
+          <div class="fruit-box" ng-style="{left: (fruit.x + 'px'), top: (fruit.y + 'px')}" ng-init="newFruit()">
+            <div class="fruit">
+            </div>
+          </div>
+      
+          <!-- Paused game modal -->
+          <div ng-show="pause" class="pause-div">
+            <p>PAUSED</p>
+          </div>
+          <!-- Game Over -->
+          <div ng-show="gameOver" class="gameOver-div">
+            <p>GAME OVER</p>
+          </div>
+          <div ng-hide="startGame" class="newGame-div" ng-click="startGame = !startGame; startNewGame()">
+            <p>START NEW GAME</p>
+          </div>
+      
+        </div>
+    </div>
+</body>
+</html>
